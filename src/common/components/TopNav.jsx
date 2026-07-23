@@ -1,6 +1,9 @@
 import { Search, NotificationsOutlined, SettingsOutlined } from '@mui/icons-material';
+import { NavLink } from 'react-router-dom';
 
 const TopNav = () => {
+    
+
     return (
         <nav className="flex items-center justify-between px-8 py-4 border-b border-white/10">
             <div className="flex items-center gap-8">
@@ -8,18 +11,21 @@ const TopNav = () => {
                     EduFlow
                 </div>
                 <div className="flex gap-6 text-sm text-gray-400 font-medium">
-                    <a href="#" className="text-white border-b-2 border-blue-500 pb-1">Dashboard</a>
-                    <a href="#" className="hover:text-white transition-colors pb-1">Catalog</a>
-                    <a href="#" className="hover:text-white transition-colors pb-1">My Learning</a>
+                    <NavLink to='/' className={({ isActive }) =>
+                        isActive ? "text-white border-b-2 border-blue-500 pb-1" : "text-gray-600"}>Dashboard</NavLink>
+                    <NavLink to='/catalog' className={({ isActive }) =>
+                        isActive ? "text-white border-b-2 border-blue-500 pb-1" : "text-gray-600"}>Catalog</NavLink>
+                    <NavLink to='/my-learning' className={({ isActive }) =>
+                        isActive ? "text-white border-b-2 border-blue-500 pb-1" : "text-gray-600"}>My Learning</NavLink>
                 </div>
             </div>
 
             <div className="flex items-center gap-6">
                 <div className="relative">
                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" fontSize="small" />
-                    <input 
-                        type="text" 
-                        placeholder="Search courses..." 
+                    <input
+                        type="text"
+                        placeholder="Search courses..."
                         className="bg-transparent border border-white/20 rounded-full py-2 pl-10 pr-4 text-sm text-white focus:outline-none focus:border-blue-500 w-64 placeholder-gray-500"
                     />
                 </div>
