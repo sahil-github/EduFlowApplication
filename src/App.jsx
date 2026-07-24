@@ -1,13 +1,15 @@
 import './App.css'
-import Dashboard from './features/Dashboard/Dashboard'
-import TopNav from './common/components/TopNav'
+import AppRoute from './routes/Router'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
+
   return (
-    <>  
-      <TopNav />
-      <Dashboard />
-    </> 
+    <>
+      <AppRoute />
+      <ToastContainer position="top-right" autoClose={3000} theme="dark" />
+    </>
   )
 }
 
